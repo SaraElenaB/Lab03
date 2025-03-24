@@ -100,9 +100,11 @@ class MultiDictionary:
         listaParole = dict.loadDictionary(path)
         self._listaDizionari[language] = listaParole
 
+#--------------------------------------------------------------------------------------------------------------------------
     def getDizionario(self, language):
         return self._listaDizionari[language] #self._listaDizionari.get(language)
 
+#--------------------------------------------------------------------------------------------------------------------------
 
 # Esempio di utilizzo
 #if __name__ == "__main__":

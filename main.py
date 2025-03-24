@@ -26,7 +26,6 @@ while(True):
         print("------------------------------------------------")
         print("Using Dichotomic search")
         sc.handleSentenceDichotomic(txtIn, "italian")
-
         continue
 
     if int(txtIn) == 2:
