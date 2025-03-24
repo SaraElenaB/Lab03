@@ -20,6 +20,12 @@ while(True):
         print("------------------------------------------------")
         print("Using Contains")
         sc.handleSentence(txtIn,"italian")
+        print("------------------------------------------------")
+        print("Using Linear search")
+        sc.handleSentenceLinear(txtIn, "italian")
+        print("------------------------------------------------")
+        print("Using Dichotomic search")
+        sc.handleSentenceDichotomic(txtIn, "italian")
 
         continue
 
@@ -29,6 +35,12 @@ while(True):
         print("------------------------------------------------")
         print("Using Contains")
         sc.handleSentence(txtIn,"english")
+        print("------------------------------------------------")
+        print("Using Linear search")
+        sc.handleSentenceLinear(txtIn, "english")
+        print("------------------------------------------------")
+        print("Using Dichotomic search")
+        sc.handleSentenceDichotomic(txtIn, "english")
         continue
 
     if int(txtIn) == 3:
@@ -37,6 +49,12 @@ while(True):
         print("------------------------------------------------")
         print("Using Contains")
         sc.handleSentence(txtIn,"spanish")
+        print("------------------------------------------------")
+        print("Using Linear search")
+        sc.handleSentenceLinear(txtIn, "spanish")
+        print("------------------------------------------------")
+        print("Using Dichotomic search")
+        sc.handleSentenceDichotomic(txtIn, "spanish")
         continue
 
     if int(txtIn) == 4:

@@ -11,8 +11,7 @@ class SpellChecker:
 
         start_time = time.time()           # inizia a misurare il tempo
         parole = txtIn.split(" ")
-        text_corretto = [replaceChars(word) for word in parole ] #replace si aspetta delle stringhe, non una lista di stringhe
-
+        text_corretto = [replaceChars(word) for word in parole ] #replace si aspetta una stringa, non una lista di stringhe
 
         listaRichWord = self._multi.searchWord(text_corretto, language)
         listaErrori = [word for word in listaRichWord if word.corretta is False]
@@ -26,7 +25,40 @@ class SpellChecker:
 
         return listaErrori, len(listaErrori), durata
 
-# --------------------------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------------------------
+    def handleSentenceLinear(self, txtIn, language):
+
+        start_time = time.time()
+        parole = txtIn.split(" ")
+        text_corretto = [replaceChars(word) for word in parole ]
+
+        listaRichWordLinear = self._multi.searchWordLinear(text_corretto, language)
+        listaErrori = [ word for word in listaRichWordLinear if word.corretta is False]
+        if len(listaErrori) > 0:
+            for error in listaErrori:
+                print(error)
+        end_time = time.time()
+        durata = end_time-start_time
+        print(f"Time elapsed {durata} seconds")
+
+#--------------------------------------------------------------------------------------------------------------------------
+    def handleSentenceDichotomic(self, txtIn, language):
+
+        start_time = time.time()
+        parole = txtIn.split(" ")
+        text_corretto = [replaceChars(word) for word in parole]
+
+        listaRichWordDichotomic = self._multi.searchWordDichotomic(text_corretto, language)
+        listaErrori = [word for word in listaRichWordDichotomic if word.corretta is False]
+        if len(listaErrori) > 0:
+            for error in listaErrori:
+                print(error)
+        end_time = time.time()
+        durata = end_time-start_time
+        print(f"Time elapsed {durata} seconds")
+
+#--------------------------------------------------------------------------------------------------------------------------
+
     def printMenu(self):
         print("______________________________\n" +
               "      SpellChecker 101\n"+
